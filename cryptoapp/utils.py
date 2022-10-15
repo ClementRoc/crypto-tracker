@@ -87,25 +87,31 @@ def get_graph():
         'Value': []
     }
 
+    # Distribute the data
     for data in crypto:
         crypto_data = get_crypto_data(data.name)
         market_value = crypto_data['value'] * data.quantity
         timeseries_crypto['Crypto'].append(data.name[0:7])
         timeseries_crypto['Value'].append(round(market_value))
 
+    # Create the graph
     fig, ax = plt.subplots(squeeze=True)
     ax.barh(timeseries_crypto['Crypto'], timeseries_crypto['Value'], color='green', edgecolor='white')
 
+    # Define the format of the X axis
     fmt = '€{x:,.0f}'
     tick = mtick.StrMethodFormatter(fmt)
     ax.xaxis.set_major_formatter(tick)
 
+    # Colorize the labels
     ax.bar_label(ax.containers[0], color='white', fontsize='xx-large')
 
+    # Colorize the frame and ticks
     ax.tick_params(color='white', labelcolor='white')
     for spine in ax.spines.values():
         spine.set_edgecolor('none')
 
+    # Save the figure to the project
     plt.savefig('cryptoapp' + url, transparent=True)
 
     plot_url = url

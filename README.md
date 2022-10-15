@@ -11,4 +11,4 @@ Features :
 # Feedback, Questions ? #
 ***
 
-Any form of feedback and questions are welcome! Please create an issue [here]().
+Any form of feedback and questions are welcome! Please create an issue [here](https://github.com/ClementRoc/crypto-tracker/issues).

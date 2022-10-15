@@ -7,7 +7,6 @@ mod = Blueprint('profit', __name__)
 
 @mod.route('/profit', methods=['GET', 'POST'])
 def profit():
-    scss_to_css()
     return render_template(
         'profit.html',
         title='Profit total - Crypto Tracker',

@@ -93,7 +93,7 @@ def get_graph():
         timeseries_crypto['Crypto'].append(data.name[0:7])
         timeseries_crypto['Value'].append(round(market_value))
 
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(squeeze=True)
     ax.barh(timeseries_crypto['Crypto'], timeseries_crypto['Value'], color='green', edgecolor='white')
 
     fmt = '€{x:,.0f}'
@@ -102,7 +102,7 @@ def get_graph():
 
     ax.bar_label(ax.containers[0], color='white', fontsize='xx-large')
 
-    ax.tick_params(color='none', labelcolor='white')
+    ax.tick_params(color='white', labelcolor='white')
     for spine in ax.spines.values():
         spine.set_edgecolor('none')
 

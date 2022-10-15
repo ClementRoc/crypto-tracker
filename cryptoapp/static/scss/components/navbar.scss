@@ -1,0 +1,44 @@
+.navbar{
+  border-bottom: 0.1px solid $color-grey;
+
+  @include responsive-lg-up{
+    height: 6rem;
+  }
+
+  &-brand{
+    padding: 0.5rem;
+  }
+
+  &-edit{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2rem;
+
+    @include responsive-lg-up{
+      position: absolute;
+      right: 1rem;
+    }
+
+    &-icon{
+      width: 1.5rem;
+    }
+  }
+
+  &-exit{
+    position: absolute;
+    top: 1.2rem;
+    left: 1rem;
+
+    @include responsive-lg-up{
+      top: 2rem;
+    }
+
+    &-icon{
+      max-width: 1.2rem;
+    }
+  }
+
+  &-edition{
+    justify-content: center;
+  }
+}

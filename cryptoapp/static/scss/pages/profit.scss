@@ -1,0 +1,51 @@
+.page-earning{
+
+  .header{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-top: 2rem;
+
+    &-graph{
+      padding-left: 3rem;
+      padding-right: 3rem;
+      width: 100%;
+
+      @include responsive-md-up{
+        width: 70%;
+      }
+
+      @include responsive-lg-up{
+        width: 60%;
+      }
+
+      @include responsive-xl-up{
+        width: 50%;
+      }
+
+      @include responsive-xxl-up{
+        width: 40%;
+      }
+    }
+  }
+
+  .footer{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    bottom: 2rem;
+
+    &-content{
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+
+      &-num{
+        padding: 0.2rem;
+
+      }
+    }
+  }
+}

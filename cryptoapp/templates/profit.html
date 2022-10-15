@@ -1,0 +1,28 @@
+{% extends '_layout.html' %}
+
+{% set pageTemplate = 'earning' %}
+
+{% block body %}
+    <body>
+        <nav class="navbar navbar-dark navbar-edition">
+            <a class="navbar-exit" href="{{ url_for('home.home') }}">
+                <img class="navbar-exit-icon" src="{{ url_for('static', filename='img/icon/left-arrow.png') }}">
+            </a>
+            <h1 class="navbar-brand">Vos gains</h1>
+        </nav>
+        <div class="header">
+            <img class="header-graph" src="{{ graph }}" alt="Gains">
+{#            {{ graph }}#}
+        </div>
+        <div class="footer">
+            <div class="footer-content">
+                <p>Valeur total</p>
+                {% if value > '0' %}
+                    <h3 class="footer-content-num" style="color: #1fc36c; border-bottom: 1px solid #1fc36c;">+{{ value }} €</h3>
+                {% elif value == '0' %}
+                    <h3 class="footer-content-num" style="color: #efefef; border-bottom: 1px solid #efefef;">{{ value }} €</h3>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+{% endblock %}

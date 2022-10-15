@@ -1,0 +1,13 @@
+.submit{
+  position: absolute;
+  bottom: 5rem;
+  display: flex;
+  align-items: center;
+
+  &-btn{
+    background-color: $color-grey;
+    width: 12rem;
+    height: 4rem;
+    font-weight: bold;
+  }
+}

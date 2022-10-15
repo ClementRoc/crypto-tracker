@@ -1,0 +1,38 @@
+$color-grey: #efefef;
+$color-green: #1fc36c;
+$color-black: #100f0f;
+$font-roboto-bold: 'Roboto-Bold', sans-serif;
+$font-roboto-regular: 'Roboto-Regular', sans-serif;
+$font-akzidenz-grotesk: 'Akzidenz-Grotesk BQ', sans-serif;
+
+// Container
+$container-custom-max-width: (
+    xxl: 1140px,
+    xl: 992px,
+    lg: 768px,
+    md: 680px,
+    sm: 575px,
+    xs: 480px,
+    xxs: 320px,
+);
+
+// Bootstrap
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1440px,
+    xxxl: 1680px,
+    4xl: 1920px,
+);
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1400px,
+    xxxl: 1600px
+);
+$grid-gutter-width: 40px;

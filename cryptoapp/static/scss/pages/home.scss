@@ -1,0 +1,101 @@
+.page-home{
+
+  .header{
+  max-height: 10rem;
+
+    &-account{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10rem;
+      background-image: url('/static/img/pages/home/background-header.jpg');
+      background-size: contain;
+
+      @include responsive-sm-up{
+        height: 20rem;
+      }
+
+      @include responsive-xxl-up{
+        height: 25rem;
+      }
+
+      &-link{
+        text-decoration: none;
+        color: $color-green;
+
+        h1{
+          font-size: 44px;
+        }
+      }
+    }
+  }
+
+  .content{
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 3rem 3rem 1rem 3rem;
+    gap: 2rem;
+
+    @include responsive-sm-up{
+      margin-top: 14rem;
+    }
+
+    @include responsive-md-up{
+      flex-flow: row wrap;
+      gap: 3rem;
+      justify-content: center;
+    }
+
+    @include responsive-xxl-up{
+      margin-top: 19rem;
+    }
+
+    &-crypto{
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: baseline;
+      padding-left: 0.3rem;
+      border-bottom: 0.1px solid $color-grey;
+
+      @include responsive-md-up{
+        width: 40%;
+      }
+
+      @include responsive-xxl-up{
+        width: 20%;
+      }
+
+
+      .crypto-img{
+        position: relative;
+        bottom: 0.3rem;
+        margin-right: 1rem;
+        margin-left: 0.5rem;
+
+        img{
+          max-width: 2rem;
+          max-height: 1.8rem;
+        }
+      }
+
+      .crypto-name{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: baseline;
+        width: 100%;
+        gap: 0.2rem;
+      }
+
+      .crypto-evaluation{
+        margin-right: 0.5rem;
+        justify-self: end;
+
+        &-icon{
+          position: relative;
+          bottom: 0.3rem;
+          max-width: 1.2rem;
+        }
+      }
+    }
+  }
+}

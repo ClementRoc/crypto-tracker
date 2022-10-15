@@ -1,0 +1,41 @@
+{% extends '_layout.html' %}
+
+{% block body %}
+    <body>
+        <nav class="navbar navbar-dark navbar-edition">
+            <a class="navbar-exit" href="{{ url_for('home.home') }}">
+                <img class="navbar-exit-icon" src="{{ url_for('static', filename='img/icon/back.png') }}">
+            </a>
+            <h1 class="navbar-brand">Supprimer un montant</h1>
+        </nav>
+        <form action="/edit_data" method="POST" class="form">
+            <div class="form-entry">
+                <img src="{{ url_for('static', filename='img/icon/loupe.png') }}" alt="">
+                <select id="name" name="name" type="text">
+                        <option value="default">Sélectionner une crypto</option>
+                    {% for data in crypto %}
+                        <option value="{{ data.name }}">{{ data.symbol }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-entry">
+                <img src="{{ url_for('static', filename='img/icon/coin.png') }}" alt="">
+                <input class="form-entry-input" type="number" min="0" id="quantity" step="any" placeholder="Quantité" name="quantity" required>
+            </div>
+            <div class="submit">
+                <button type="submit" class="submit-btn btn">
+                    VALIDER
+                </button>
+            </div>
+        </form>
+            <div class="crypto-container">
+                {% for data in crypto %}
+                    <div class="crypto-container-data">
+                        <h4 style="color: #1fc36c">{{ data.quantity }}</h4>
+                        <img src="{{ url_for('static', filename='img/logos/' + data.symbol + '.png') }}" alt="">
+                        <h4>{{ data.symbol }}</h4>
+                    </div>
+                {% endfor %}
+            </div>
+    </body>
+{% endblock %}

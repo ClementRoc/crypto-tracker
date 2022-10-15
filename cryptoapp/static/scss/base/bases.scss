@@ -1,0 +1,24 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: $color-black;
+  color: $color-grey;
+  font-family: $font-roboto-regular;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-family: $font-roboto-bold;
+  font-weight: bolder;
+}
+
+.logo{
+  font-family: $font-akzidenz-grotesk;
+  font-weight: bolder;
+}

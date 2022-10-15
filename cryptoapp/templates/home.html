@@ -1,0 +1,52 @@
+{% extends '_layout.html' %}
+
+{% set pageTemplate = 'home' %}
+
+{% block body %}
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand logo">Crypto Tracker</a>
+            <div class="navbar-edit">
+                <a href="{{ url_for('home.edit') }}">
+                    <img class="navbar-edit-icon" src="{{ url_for('static', filename='img/icon/edit.png') }}" alt="">
+                </a>
+                <a href="{{ url_for('home.add') }}">
+                    <img class="navbar-edit-icon" src="{{ url_for('static', filename='img/icon/plus.png') }}" alt="">
+                </a>
+            </div>
+        </nav>
+        <div class="header">
+            <div class="header-account">
+                <a class="header-account-link" href="{{ url_for('profit.profit') }}">
+                    {% if profit > '0' %}
+                        <h1 style="color: #1fc36c;">+{{ profit }} €</h1>
+                    {% elif profit == '0' %}
+                        <h1 style="color: #efefef;">{{ profit }} €</h1>
+                    {% else %}
+                        <h1 style="color: red;">{{ profit }} €</h1>
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+        <div class="content">
+            {% for data in crypto %}
+                <div class="content-crypto">
+                    <div class="crypto-img">
+                        <img src="{{ url_for('static', filename='img/logos/' + data.symbol + '.png') }}" alt="">
+                    </div>
+                    <div class="crypto-name">
+                        <h4>{{ data.symbol }}</h4>
+                        <p>({{ data.name }})</p>
+                    </div>
+                    <div class="crypto-evaluation">
+                        {% if data.percent_change_24h > 0 %}
+                            <img class="crypto-evaluation-icon" src="{{ url_for('static', filename='img/icon/up.png') }}" alt="">
+                        {% else %}
+                            <img class="crypto-evaluation-icon" src="{{ url_for('static', filename='img/icon/down.png') }}" alt="">
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+{% endblock %}

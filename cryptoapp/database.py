@@ -5,7 +5,7 @@ from flask import request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from requests import Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
-from cryptoapp import app
+from cryptoapp import app, internal_error
 
 db = SQLAlchemy(app)
 
@@ -48,10 +48,14 @@ Link between the form in add.html and the Crypto database
 
 @app.route('/add_data', methods=['POST'])
 def add_data():
-    # Get all the data from the form
-    name = request.form.get('name')
-    quantity = int(request.form.get('quantity'))
-    price = int(request.form.get('price'))
+    try:
+        # Get all the data from the form
+        name = request.form.get('name')
+        quantity = int(request.form.get('quantity'))
+        price = int(request.form.get('price'))
+
+    except (KeyError, TypeError) as e:
+        return internal_error(e)
 
     # Query, filtering by name, into the Crypto database
     crypto = Crypto.query.filter_by(name=name).first()
@@ -88,9 +92,13 @@ Link between the form in edit.html and the Crypto database
 
 @app.route('/edit_data', methods=['POST'])
 def edit_data():
-    # Get all the data from the form
-    name = request.form.get('name')
-    quantity = int(request.form.get('quantity'))
+    try:
+        # Get all the data from the form
+        name = request.form.get('name')
+        quantity = int(request.form.get('quantity'))
+
+    except (KeyError, TypeError) as e:
+        return internal_error(e)
 
     # Get the data from CoinMarketCap
     crypto_data = get_crypto_data(name)

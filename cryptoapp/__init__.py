@@ -12,6 +12,14 @@ def not_found(e):
     )
 
 
+@app.errorhandler(500)
+def internal_error(e):
+    return render_template(
+        'error/500.html',
+        error=e
+    )
+
+
 from cryptoapp.views import home
 from cryptoapp.views import profit
 

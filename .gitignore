@@ -3,3 +3,4 @@ instance
 .pytest_cache
 .idea
 venv
+.coverage

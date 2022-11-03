@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 from cryptoapp.database import Crypto
-from cryptoapp.utils import scss_to_css, get_graph, get_value_total
+from cryptoapp.utils import get_graph, get_value_total
 
 mod = Blueprint('profit', __name__)
 

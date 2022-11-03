@@ -1,5 +1,5 @@
 app.db
-/instance
-/.pytest_cache
-/.idea
+instance
+.pytest_cache
+.idea
 venv

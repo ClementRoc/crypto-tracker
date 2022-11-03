@@ -19,4 +19,3 @@ def test_api_response():
     response = session.get(url, params=parameters)
 
     assert response.status_code == 200
-
